@@ -1,76 +1,125 @@
 <!DOCTYPE HTML>
-<!--
-	Dopetrope by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>My Roomies</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body class="homepage">
-		<div id="page-wrapper">
-
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div id="header">
-
-						<!-- Logo -->
-							<h1><a href="index.html">Dopetrope</a></h1>
-
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li class="current"><a href="chat.html">Chat</a></li>
-									<li><a href="debts.html">Debts</a></li>
-									<li><a href="settings.html">Settings</a></li>
-								</ul>
-							</nav>
-
-						<!-- Banner -->
-							<section id="banner">
-								<header>
-									<h2>Howdy. This is Dopetrope.</h2>
-									<p>A responsive template by HTML5 UP</p>
-								</header>
-							</section>
-					</div>
-				</div>
-
-						<!-- Footer -->
-				<div id="footer-wrapper">
-					<section id="footer" class="container">
-						<div class="row">
-							<div class="12u">
-
-								<!-- Copyright -->
-									<div id="copyright">
-										<ul class="links">
-											<li>&copy; My Roomies. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
-
-							</div>
-						</div>
-					</section>
-				</div>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<head>
+    <title>MyRoomies</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="assets/js/ie/html5shiv.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/ie8.css" />
+    <link rel="stylesheet" href="assets/css/chat.css">
+</head>
+<body>
+<div id="page-wrapper">
+    <div id="header-wrapper">
+        <div id="header">
+            <h1><a href="index.html">MyRoomies</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current"><a href="chat.html">Chat</a></li>
+                    <li><a href="debts.html">Debts</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+            <section id="banner">
+                <header>
+                    <div class="chat-container remove">
+                        <div class="chat">
+                            <div class="chat-history">
+                                <ul>
+                                    <li class="remove">
+                                        <div class="msg-info align-right">
+                                            <span class="msg-time" >1:24 PM, 6 Apr 2018</span> &nbsp; &nbsp;
+                                            <span class="msg-name" >Jeff</span> <img class="roommate0" src="images/Jeff.png">
+                                        </div>
+                                        <div class="msg user-msg float-right">
+                                            Just dropped off our monthly rent.
+                                        </div>
+                                    </li>
+                                    <li class="remove">
+                                        <div class="msg-info align-left">
+                                            <span class="msg-name"><img class="roommate1" src="images/Lucy.png"> Lucy</span>
+                                            <span class="msg-time">1:26 PM, 6 Apr 2018</span>
+                                        </div>
+                                        <div class="msg others-msg float-left">
+                                            Awesome.
+                                        </div>
+                                    </li>
+                                    <li class="remove">
+                                        <div class="msg-info align-left">
+                                            <span class="msg-name"><img class="roommate2" src="images/Dave.png"> Dave</span>
+                                            <span class="msg-time">2:46 PM, 6 Apr 2018</span>
+                                        </div>
+                                        <div class="msg others-msg float-left">
+                                            Hey guys, I'm at grocery store. Anyone need anything?
+                                        </div>
+                                    </li>
+                                    <li class="remove">
+                                        <div class="msg-info align-right">
+                                            <span class="msg-time" >2:52 PM, 6 Apr 2018</span> &nbsp; &nbsp;
+                                            <span class="msg-name" >Jeff</span> <img class="roommate0" src="images/Jeff.png">
+                                        </div>
+                                        <div class="msg user-msg float-right">
+                                            Yeah, can tou pick up some eggs?
+                                        </div>
+                                    </li>
+                                    <li class="remove">
+                                        <div class="msg-info align-left">
+                                            <span class="msg-name"><img class="roommate2" src="images/Dave.png"> Dave</span>
+                                            <span class="msg-time">2:53 PM, 6 Apr 2018</span>
+                                        </div>
+                                        <div class="msg others-msg float-left">
+                                            Sure thing!
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chat-text-area remove">
+                                <textarea name="msg-to-send" id="msg-to-send" placeholder ="Type your message here..." rows="1"></textarea>
+                                <button>SEND</button>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </section>
+        </div>
+    </div>
+    <div id="footer-wrapper">
+        <section id="footer" class="container">
+            <div class="row">
+                <div class="12u">
+                    <div id="copyright">
+                        <ul class="links">
+                            <li>&copy; MyRoomies. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/skel-viewport.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/ie/respond.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script id="message-template" type="text/x-handlebars-template">
+    <li class="remove">
+        <div class="msg-info align-right">
+            <span class="msg-time" >{{time}}, Today</span> &nbsp; &nbsp;
+            <span class="msg-name" >Jeff</span> <img class="roommate0" src="images/Jeff.png">
+        </div>
+        <div class="msg user-msg float-right">
+            {{messageOutput}}
+        </div>
+    </li>
+</script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="assets/js/chat.js"></script>
+</body>
 </html>

@@ -1,0 +1,87 @@
+.chat-container {
+    margin: 0 auto;
+    width: 600px;
+    border-radius: 5px;
+}
+.chat {
+    width: 600px;
+    float: left;
+    background: #f5f8fb;
+    border-radius: 5px;
+}
+.chat-history {
+    padding:10px 15px 5px 15px;
+    border-bottom: 3px solid white;
+    overflow-y: scroll;
+    height: 260px;
+}
+.msg-info {
+    margin-bottom: 2px;
+}
+.msg-time {
+    color: #8b8d94;
+    padding-left: 8px;
+}
+.roommate0, .roommate1, .roommate2 {
+    height: 30px;
+    width: 30px;
+    margin-bottom: -10px;
+}
+.msg {
+    color: white;
+    padding:10px 15px 10px 15px;
+    line-height: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.others-msg {
+    text-align: left;
+    background: #9f9f9f;
+}
+.user-msg {
+    text-align: left;
+    background: #479f4e;
+}
+.chat-text-area {
+    padding: 15px 10px 15px 10px;
+}
+.chat-text-area textarea {
+    border-radius: 5px;
+    width: 75%;
+    border: none;
+    padding: 10px;
+    resize: none;
+}
+.chat-text-area button {
+    float: right !important;
+    color: #FF8C00 !important;
+    cursor: pointer !important;
+    background: #dddddd !important;
+    width: 18% !important;
+}
+.chat-text-area button:hover {
+    color: #d06e00 !important;
+}
+.remove:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+ul{
+    margin-bottom: 0px;
+}
