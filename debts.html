@@ -12,6 +12,90 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+        <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel='stylesheet prefetch' href='https://ilt-insightdlp-static.s3.amazonaws.com/css/default.css'>
+        <link rel="stylesheet" href="assets/css/debts.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                // Get the modal
+                var payModal = document.getElementById('payModal');
+                var settleModal = document.getElementById('settleModal');
+                var remindModal = document.getElementById('remindModal');
+
+                // Get the button that opens the modal
+                var payBtn = document.getElementById("payBtn");
+                var settleBtn = document.getElementById("settleBtn");
+                var remindBtn = document.getElementById("remindBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                //var settleSpan = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal
+                payBtn.onclick = function() {
+                    payModal.style.display = "block";
+                }
+
+                settleBtn.onclick = function() {
+                    settleModal.style.display = "block";
+                }
+
+                remindBtn.onclick = function() {
+                    remindModal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    payModal.style.display = "none";
+                    settleModal.style.display = "none";
+                }
+
+                // settleSpan.onclick = function() {
+                //     settleModal.style.display = "none";
+                // }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == payModal) {
+                        payModal.style.display = "none";
+                    }
+                    if (event.target == settleModal) {
+                        settleModal.style.display = "none";
+                    }
+                    if (event.target == remindModal) {
+                        remindModal.style.display = "none";
+                    }
+                }
+
+
+
+
+            });
+            function settleConfirm() {
+                settleModal.style.display = "none";
+
+                var confirm = document.getElementById("owe")
+
+                confirm.style.setProperty("text-decoration", "line-through");
+                document.getElementById("payBtn").style.display='none';
+                document.getElementById("settleBtn").style.display='none';
+
+
+            }
+
+            function settleNo() {
+                settleModal.style.display = "none";
+                remindModal.style.display = "none";
+
+
+            }
+
+        </script>
+
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -36,16 +120,103 @@
 						<!-- Banner -->
 							<section id="banner">
 								<header>
-									<h2>Howdy. This is MyRoomies.</h2>
-									<p>A responsive template by HTML5 UP</p>
+									<!--<h2>Howdy. This is MyRoomies.</h2>-->
+									<!--<p>A responsive template by HTML5 UP</p>-->
+									<div class="card card-inverse col-lg-4"  style="background-color: white">
+										<div class="card-block" id="cardText" style="color: white">
+                                            <div style="float: left">
+                                                <img class="roommate2" src="images/Jeff.png" style="width: 100px;height: 100px"> <br/>Jeff
+                                            </div>
+                                            <div align="inline" style="float: right">
+                                                <span style="display: inline" id="owe">You owe Dave $20  </span><button id = "payBtn" class="ctrl-standard typ-subhed fx-sliderIn">PAY</button>  <button id="settleBtn" class="ctrl-standard typ-subhed fx-sliderIn">SETTLE</button><br/><br/>
+                                                Lucy owes you $50 <button class="ctrl-standard typ-subhed fx-sliderIn" id="remindBtn">REMIND</button><br/>
+                                            </div>
+
+										</div>
+
+
+									</div>
+
+
+
+                                    <!-- The Modal -->
+                                    <div id="payModal" class="modal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>You will be redirected to PayPal</p><br/>
+                                            <button class="ctrl-standard typ-subhed fx-sliderIn" style="background-color: #4CAF50;"><a href="https://www.paypal.com/us/home">Continue</a></button>
+                                        </div>
+
+                                    </div>
+
+                                    <div id="settleModal" class="modal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+
+                                            <p>Are you sure you want to settle?</p><br/>
+                                            <button class="ctrl-standard typ-subhed fx-sliderIn" style="background-color: #4CAF50;" onclick="settleConfirm()">YES</button>
+                                            <button class="ctrl-standard typ-subhed fx-sliderIn" style="background-color: orangered;" onclick="settleNo()">NO</button>
+                                        </div>
+
+                                    </div>
+
+                                    <div id="remindModal" class="modal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+
+                                            <p>A reminder has been send to Lucy!</p><br/>
+                                            <button class="ctrl-standard typ-subhed fx-sliderIn" style="background-color: orangered;" onclick="settleNo()">Close</button>
+
+                                        </div>
+
+                                    </div>
+
 								</header>
 							</section>
 					</div>
-				</div>
 
+                    <div class="timecontainer">
+                        <h1>Payment History Timeline</h1>
+                    </div>
+                    <section class="timeline" style="background: #456990;padding-bottom: 50px;padding-top: 50px;">
+
+                        <ul>
+                            <li>
+                                <div>
+                                    <time>APR 10,2018</time>
+                                    <br/>You payed Lucy 10$
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <time>APR 16,2018</time>
+                                    <br/>Lucy payed Dave 50$
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <time>APR 28,2018</time>
+                                    <br/>Dave payed You 15$
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <time>May 1,2018</time>
+                                    <br/>Lucy payed Dave 20$
+                                </div>
+                            </li>
+
+                        </ul>
+                    </section>
+
+                </div>
 						<!-- Footer -->
 				<div id="footer-wrapper">
-					<section id="footer" class="container">
+					<section id="footer" >
 						<div class="row">
 							<div class="12u">
 
@@ -61,7 +232,7 @@
 					</section>
 				</div>
 
-		</div>
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
