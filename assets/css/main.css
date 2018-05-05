@@ -1087,7 +1087,7 @@
 			animation: none !important;
 		}
 
-	input, textarea, select {
+	textarea, select {
 		font-family: 'Source Sans Pro';
 		font-weight: 300;
 		color: #5d5d5d;
@@ -1163,7 +1163,7 @@
 		margin: 0 0 0.5em 0;
 	}
 
-	form input[type=text],
+	
 	form input[type=email],
 	form input[type=password],
 	form select,
@@ -1179,7 +1179,7 @@
 		width: 100%;
 	}
 
-		form input[type=text]:focus,
+		
 		form input[type=email]:focus,
 		form input[type=password]:focus,
 		form select:focus,
@@ -1884,7 +1884,7 @@
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 4.5em 0 4em 0;
+				padding: 1em 0 4em 0;
 			}
 
 			#main-wrapper {
@@ -2008,13 +2008,13 @@
 
 			#banner {
 				position: relative;
-				padding: 8em 0;
-				margin: 4em 0 0 0;
+				padding: 1em 0;
+				margin: 1em 0 0 0;
 			}
 
 				#banner header {
 					display: inline-block;
-					padding: 2.5em 5em;
+					padding: 1em 1em;
 					border-radius: 5px;
 				}
 
@@ -2205,7 +2205,7 @@
 				overflow-x: hidden;
 			}
 
-			body, input, textarea, select {
+			body, textarea, select {
 				line-height: 1.75em;
 				font-size: 11pt;
 				letter-spacing: 0;
