@@ -1707,9 +1707,9 @@
 			opacity: 0.1;
 		}
 
-		#main-wrapper .major h2 {
-			/*background: #f7f7f7 url("images/bg02.png");*/
-		}
+		/* #main-wrapper .major h2 {
+			background: #f7f7f7 url("images/bg02.png");
+		} */
 
 	#footer-wrapper {
 		position: relative;

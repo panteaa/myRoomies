@@ -5,178 +5,266 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>MyRoomies</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
-		
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/skel-viewport.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="assets/js/main.js"></script>
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+<head>
+	<title>MyRoomies</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+	 crossorigin="anonymous">
 
-		
-		<script>
-		$(document).on('click', '.check', function() {
-			
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/skel-viewport.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+
+	<script>
+		$(document).on('click', '.check', function () {
+
 			$(this).children().first().attr('class', "fas fa-check-circle");
 		});
 
-		$(document).on('click', '.remind', function() {
-			$('#exampleModal').modal('show');
+		$(document).on('click', '.remind', function () {
+			$('#remindModal').modal('show');
 		});
-		
-		</script>
-	</head>
-	<body class="homepage">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div id="header">
+		$(document).on('click', '#add-chore', function() {
+			$('#addModal').modal('show');
+		});
 
-						<!-- Logo -->
-							<h1><a href="index.html">MyRoomies</a></h1>
+		$(document).on('click', '#addnewchore', function() {
+			//get name from input
+			var chore = $('#new-chore-name').val();
+			if(chore.trim()) {
+				console.log(chore);
+				//randomly assign the chore to someone
+				var addindex = Math.floor((Math.random() * 3));
+				var roommate = $('#roommates').children().get(addindex);
+				var chorelist = $(roommate).find('ul');
+				console.log(addindex);
+				if(addindex == 0) {
+					var classname = 'check';
+					var icon = 'fas fa-bell';
+				}
+				else {
+					var classname = 'remind';
+					var icon = 'far fa-circle';
+				}
+				var newchore = '<li class="list-group-item"><div><p class="chore-name">'+ chore +'</p><div class="' + classname +'"><i class="'+ icon +'"></i></div></div></li>'
+				console.log(classname);
+				$(chorelist).append(newchore);
+				$('#addModal').modal('hide');
+			} else {
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li class="current"><a href="index.html">Home</a></li>
-									<li><a href="chat.html">Chat</a></li>
-									<li><a href="debts.html">Debts</a></li>
-									<li><a href="settings.html">Settings</a></li>
-								</ul>
-							</nav>
+			}
+		})
 
-						<!-- Banner -->
-							<section id="banner">
-								<header>
-									<h2><a href="#">Add Chore</a></h2>
-								</header>
-							</section>
+	</script>
+</head>
 
-					</div>
-				</div>
+<body class="homepage">
+	<div id="page-wrapper">
 
-			<!-- Main -->
-				<div id="main-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="12u">
-								<ul id='roommates' class='list-group'>
-									<li class="list-group-item">
-										<div>
-											<h3>Jeff</h3>
-											<ul class="list-group list-group-flush">
-												<li class="list-group-item">
-													<div>
-														<p class='chore-name'>Cleaning Kitchen</p>
-														<div class='check'><i class="far fa-circle"></i></div>
-													</div>	
-												</li>
-												<li class="list-group-item">
-													<div>
-														<p class='chore-name'>Taking out Trash</p>
-														<div class='check'><i class="far fa-circle"></i></div>
-													</div>	
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li class="list-group-item">
+		<!-- Header -->
+		<div id="header-wrapper">
+			<div id="header">
+
+				<!-- Logo -->
+				<h1>
+					<a href="index.html">MyRoomies</a>
+				</h1>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current">
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="chat.html">Chat</a>
+						</li>
+						<li>
+							<a href="debts.html">Debts</a>
+						</li>
+						<li>
+							<a href="settings.html">Settings</a>
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Banner -->
+				<section id="banner">
+					<header>
+						<h2>
+							<a href="#" id='add-chore'>Add Chore</a>
+						</h2>
+					</header>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
+						<ul id='roommates' class='list-group'>
+							<li class="list-group-item">
+								<div>
+									<h3>Jeff</h3>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
 											<div>
-												<h3>Dave</h3>
-												<ul class="list-group list-group-flush">
-													<li class="list-group-item">
-														<div>
-															<p class='chore-name'>Cleaning Kitchen</p>
-															<div class='remind'><i class="fas fa-bell"></i></div>
-														</div>	
-													</li>
-													<li class="list-group-item">
-														<div>
-															<p class='chore-name'>Taking out Trash</p>
-															<div class='remind'><i class="fas fa-bell"></i></div>
-														</div>	
-													</li>
-												</ul>
+												<p class='chore-name'>Cleaning Kitchen</p>
+												<div class='check'>
+													<i class="far fa-circle"></i>
+												</div>
 											</div>
 										</li>
 										<li class="list-group-item">
-												<div>
-													<h3>Lucy</h3>
-													<ul class="list-group list-group-flush">
-														<li class="list-group-item">
-															<div>
-																<p class='chore-name'>Cleaning Kitchen</p>
-																<div class='remind'><i class="fas fa-bell"></i></div>
-															</div>	
-														</li>
-														<li class="list-group-item">
-															<div>
-																<p class='chore-name'>Taking out Trash</p>
-																<div class='remind'><i class="fas fa-bell"></i></div>
-															</div>	
-														</li>
-													</ul>
+											<div>
+												<p class='chore-name'>Taking out Trash</p>
+												<div class='check'>
+													<i class="far fa-circle"></i>
 												</div>
-											</li>
-								</ul>
-							</div>
-						</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div>
+									<h3>Dave</h3>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<div>
+												<p class='chore-name'>Cleaning Kitchen</p>
+												<div class='remind'>
+													<i class="fas fa-bell"></i>
+												</div>
+											</div>
+										</li>
+										<li class="list-group-item">
+											<div>
+												<p class='chore-name'>Taking out Trash</p>
+												<div class='remind'>
+													<i class="fas fa-bell"></i>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div>
+									<h3>Lucy</h3>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<div>
+												<p class='chore-name'>Cleaning Kitchen</p>
+												<div class='remind'>
+													<i class="fas fa-bell"></i>
+												</div>
+											</div>
+										</li>
+										<li class="list-group-item">
+											<div>
+												<p class='chore-name'>Taking out Trash</p>
+												<div class='remind'>
+													<i class="fas fa-bell"></i>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
+			</div>
+		</div>
 
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<section id="footer" class="container">
-						<div class="row">
-							<div class="12u">
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<section id="footer" class="container">
+				<div class="row">
+					<div class="12u">
 
-								<!-- Copyright -->
-									<div id="copyright">
-										<ul class="links">
-											<li>&copy; MyRoomies. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
-
-							</div>
+						<!-- Copyright -->
+						<div id="copyright">
+							<ul class="links">
+								<li>&copy; MyRoomies. All rights reserved.</li>
+								<li>Design:
+									<a href="http://html5up.net">HTML5 UP</a>
+								</li>
+							</ul>
 						</div>
-					</section>
-				</div>
 
-		
-				<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLabel">Success</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-			  Reminder sent!
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-primary">Dismiss</button>
-			</div>
-		  </div>
+					</div>
+				</div>
+			</section>
 		</div>
-	  </div>
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="remindModal" tabindex="-1" role="dialog" aria-labelledby="remindModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="remindModalLabel">Success</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						Reminder sent!
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+					</div>
+				</div>
+			</div>
 		</div>
-	</body>
+
+		<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="addModalLabel">Success</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="new-chore-name" class="col-form-label">New Chore:</label>
+								<input type="text" class="form-control" required type="text" id="new-chore-name">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="submit" class="btn btn-primary" id='addnewchore'>Add</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
