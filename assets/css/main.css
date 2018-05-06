@@ -1789,6 +1789,18 @@
 		float: left;
 	}
 
+	.list-group-item.you {
+		background: moccasin;
+	}
+
+	.list-group-item #you ul {
+		background: moccasin;
+	}
+
+	.btnadd {
+		color: mintcream;
+	}
+
 
 /* Desktop */
 
