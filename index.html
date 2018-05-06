@@ -13,12 +13,32 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+		
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-viewport.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
 		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+		
+		<script>
+		$(document).on('click', '.check', function() {
+			
+			$(this).children().first().attr('class', "fas fa-check-circle");
+		});
+
+		$(document).on('click', '.remind', function() {
+			$('#exampleModal').modal('show');
+		});
+		
+		</script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -82,13 +102,13 @@
 													<li class="list-group-item">
 														<div>
 															<p class='chore-name'>Cleaning Kitchen</p>
-															<div class='check'><i class="fas fa-bell"></i></div>
+															<div class='remind'><i class="fas fa-bell"></i></div>
 														</div>	
 													</li>
 													<li class="list-group-item">
 														<div>
 															<p class='chore-name'>Taking out Trash</p>
-															<div class='check'><i class="fas fa-bell"></i></div>
+															<div class='remind'><i class="fas fa-bell"></i></div>
 														</div>	
 													</li>
 												</ul>
@@ -101,13 +121,13 @@
 														<li class="list-group-item">
 															<div>
 																<p class='chore-name'>Cleaning Kitchen</p>
-																<div class='check'><i class="fas fa-bell"></i></div>
+																<div class='remind'><i class="fas fa-bell"></i></div>
 															</div>	
 														</li>
 														<li class="list-group-item">
 															<div>
 																<p class='chore-name'>Taking out Trash</p>
-																<div class='check'><i class="fas fa-bell"></i></div>
+																<div class='remind'><i class="fas fa-bell"></i></div>
 															</div>	
 														</li>
 													</ul>
@@ -137,16 +157,26 @@
 					</section>
 				</div>
 
+		
+				<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  Reminder sent!
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-primary">Dismiss</button>
+			</div>
+		  </div>
 		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+	  </div>
+		</div>
 	</body>
 </html>
